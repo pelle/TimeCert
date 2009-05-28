@@ -4,7 +4,7 @@ load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 #ssh_options[:paranoid] = false
 #set :ssh_options, { :forward_agent => true }
 ssh_options[:forward_agent] = true
-#ssh_options[:port] = 11870
+ssh_options[:port] = 11870
 ssh_options[:paranoid] = false
 
 set :application, 'timecert'
@@ -16,7 +16,7 @@ set :use_sudo, false
 # GIT HUB
 default_run_options[:pty] = true
 set :scm, "git"
-set :repository,  "git@github.com:pelle/timecert.git"
+set :repository,  "git@github.com:pelle/TimeCert.git"
 set :branch, "deploy"
 set :deploy_via,    :remote_cache
 set :repository_cache,    "git-cache"
