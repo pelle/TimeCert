@@ -9,6 +9,16 @@ class DigestsController < ApplicationController
 
   def show
     @stamp=Stamp.find_or_create_by_digest params[:digest]
+    respond_to do |format|
+      format.html
+      format.iframe
+      format.xml
+      [:csv,:text,:yaml,:json,:ini,:time].each do |type|
+        format.send(type) do 
+          render :text=>@stamp.send("to_#{type.to_s}")
+        end
+      end
+    end
   end
 
 end

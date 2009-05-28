@@ -9,6 +9,10 @@ class Stamp < ActiveRecord::Base
     self.timestamp.utc
   end
   
+  def to_time
+    utc.to_s
+  end
+  
   def to_text
     utc.to_s
   end
@@ -27,6 +31,10 @@ class Stamp < ActiveRecord::Base
   
   def to_ini
     "# Go to http://timecert.org for more info\ndigest=#{self.digest}\ntimestamp=#{self.utc}"
+  end
+  
+  def to_hash
+    {:timestamp=>timestamp,:digest=>digest}
   end
   
 end
