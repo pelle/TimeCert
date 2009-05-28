@@ -8,7 +8,7 @@ class DigestsController < ApplicationController
   end
 
   def show
-    @stamp=Stamp.find_or_create_by_digest params[:digest]
+    @stamp=Stamp.by_digest params[:digest]
     respond_to do |format|
       format.html
       format.iframe

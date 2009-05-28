@@ -2,7 +2,6 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe DigestsController do
 
-  #Delete these examples and add some real ones
   it "should use DigestsController" do
     controller.should be_an_instance_of(DigestsController)
   end
@@ -17,14 +16,14 @@ describe DigestsController do
 
   describe "GET 'create'" do
     it "should be successful" do
-      get 'create'
-      response.should be_success
+      get 'create',:body=>"hello"
+      response.should redirect_to("/aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d")
     end
   end
 
   describe "GET 'show'" do
     it "should be successful" do
-      get 'show'
+      get 'show',:digest=>"a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"
       response.should be_success
     end
   end

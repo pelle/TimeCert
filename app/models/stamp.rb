@@ -1,5 +1,12 @@
 class Stamp < ActiveRecord::Base
-  validates_format_of :digest,:with=>/[0123456789abcdef]{40}/,:on=>:create
+  set_primary_key :digest
+  attr_accessible :digest
+  attr_readonly :digest,:created_at
+  validates_format_of :digest,:with=>/^[0123456789abcdef]{40}$/,:on=>:create
+  
+  def self.by_digest(digest)
+    Stamp.find_or_create_by_digest digest
+  end
   
   def timestamp
     self.created_at
@@ -34,7 +41,12 @@ class Stamp < ActiveRecord::Base
   end
   
   def to_hash
-    {:timestamp=>timestamp,:digest=>digest}
+    {:timestamp=>utc.to_s,:digest=>digest}
   end
   
+  private
+  # override this so we can set digest which is the primary key using hash assignment
+  def attributes_protected_by_default
+    []
+  end
 end
