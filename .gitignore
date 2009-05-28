@@ -1,0 +1,10 @@
+doc
+pkg
+*.log
+.DS_Store
+log/*.log
+tmp/**/*
+.DS_Store
+db/schema.rb
+config/database.yml
+db/*.sqlite3

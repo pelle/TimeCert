@@ -1,0 +1,30 @@
+%html
+  %head
+    %title TimeCert
+    %link{ :href=>"/stylesheets/styles.css", :media=>"screen",:rel=>"Stylesheet",:type=>"text/css"}
+    %meta{:name=>"viewport",:content=>"width=600"}
+
+  %body
+    #page
+      #header
+        %ul.tabs
+          %li
+            %a{:href=>"/generate"}
+              Generate digest
+      .wrapper#body
+        .logo
+          %a{:href => "/"}
+            %img{:src=>'/images/logo75.png',:alt=>'TimeCert',:width=>"75",:height=>'75'}
+        .content
+          = yield
+    .footer
+      .stuff
+        %p 
+          Source code available on
+          %a{:href=>"http://github.com/pelle/timecert/tree/master"}
+            GitHub
+          %a{:href=>"http://github.com/pelle/timecert/wikis"}Development Wiki
+        %p
+          %a{:href=>"http://stakeventures.com/pages/whoami"}
+            (c) 2006-2009 Pelle Braendgaard and Stake Ventures Inc.
+        
