@@ -1,5 +1,6 @@
 require 'digest/sha1'
 class DigestsController < ApplicationController
+  caches_page :show
   def new
   end
 
