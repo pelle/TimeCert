@@ -28,7 +28,7 @@ role :web, "timecert.org"
 role :db,  "timecert.org", :primary => true
 
 after   'deploy:restart', 'deploy:cleanup'
-after   'deploy:update_code', 'rake:gems_install'
+after   'deploy:update_code', 'db:symlink'
 
 #############################################################
 #	Passenger
@@ -40,6 +40,13 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
 
+end
+
+namespace :db do
+  desc "Make symlink for database yaml" 
+  task :symlink do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml" 
+  end
 end
 
 namespace :rake do
