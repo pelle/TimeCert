@@ -5,9 +5,11 @@
   The actual data will not be stored anywhere. Only the digest and timestamp is stored.
 
 %form{ :action=>"/digest",:method=>"POST"} 
-  %textarea{:name=>"body",:cols=>60,:rows=>10}=@body
-  %br
-  %input{ :value=>"Generate",:type=>"submit"}
+  %fieldset
+    %p
+      %textarea{:name=>"body",:cols=>60,:rows=>10}=@body
+    %p
+      %input{ :value=>"Generate",:type=>"submit"}
 %br
 %h3 
   Using this page from your own blog or web application
