@@ -1,4 +1,6 @@
-%html
+!!! XML
+!!!
+%html{html_attrs}
   %head
     %title="Timestamp for #{@stamp.digest}"
     %style{:type => "text/css" }
@@ -9,7 +11,7 @@
         a {font-weight:bold;color:blue;}
         #logo {position: absolute;top:-1px;right:0;}  
   %body
-    %img#logo{:src=>"/images/logo25.png",:alt=>"TimeCert",:width=>"25px",:height=>"25px"}
+    %img#logo{:src=>"/images/logo25.png",:alt=>"TimeCert",:width=>"25",:height=>"25"}
     %span#digest=@stamp.digest
     %span#timestamp=@stamp.utc
     %br
