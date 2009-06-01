@@ -1,0 +1,15 @@
+:textile
+  h1. Embedding TimeCert in your Python application
+
+  The most important thing to do first of all is to find out what exactly you want to timestamp. This could be the content of an article, a commit of code, the text of a comment or just about anything else.
+
+  If possible I recommend storing a digest column in your model, which you then calculate when saving your model.
+
+  If this isn't possible, you could calculate the digest on the fly in a helper method. This isn't as bad as it sounds as SHA1 digests are pretty fast to calculate. However if one page has to calculate 100's of digests it's not ideal. As with anything caching is important.
+
+:textile
+  h2. Calling TimeCert directly
+  
+  This example shows 2 things. First how to calculate a SHA1 in Python and afterwards how simple it is to call TimeCert directly and return it's time stamp.
+  
+=gist 121133

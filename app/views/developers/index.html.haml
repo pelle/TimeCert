@@ -1,0 +1,45 @@
+:textile
+  h1. Embedding TimeCert in your own application
+
+  TimeCert allows you to prove to your applications users that some content of your application was available at a given time. This helps provide trust and transparency in your application. It could also be used in Intellectual Property protection to prove that your content was created before someone else.
+  
+  The most important thing to do first of all is to find out what exactly you want to time stamp. This could be the content of an article, a commit of code, the text of a comment or just about anything else.
+
+  If possible I recommend storing a digest column in your database, which you calculate when saving your row.
+
+  If this isn't possible, you could calculate the digest on the fly during display. This isn't as bad as it sounds as SHA1 digests are pretty fast to calculate. However if one page has to calculate 100's of digests it's not ideal. As with anything caching is important.
+  
+  h2. iframe embedding
+  
+  In most cases displaying the timestamp in an iframe is the simplest way of including it in a web application. This way when the page is viewed for the first time the time stamp is recorded by us.
+  
+  <code><iframe src="http://timecert.org/[40 character Hex SHA1].iframe" width="450px" height="30px"></iframe></code>
+  
+  h2. HTTP Get
+  
+  You could also just perform a simple HTTP GET from your application on creation of the content.
+  
+  The url is just:
+  
+  <code>http://timecert.org/[40 character Hex SHA1]</code>
+  
+  This would return an html page. If you wish you can add one of the following extensions to it:
+  
+  * time - the time stamp as plain text
+  * txt - the time stamp as plain text
+  * json - json hash of digest and time stamp
+  * xml - xml of digest and time stamp
+  * ini - This is like a Windows INI file or Java properties file format containing digest and time stamp
+  * csv - Comma seperated list of digest and time stamp
+  
+  To use any of these just add the file extension to
+  
+  <code>http://timecert.org/[40 character Hex SHA1].json</code>
+  
+  h2. TimeCert and your platform
+  
+%ul
+  %li= link_to "Ruby",:action=>"ruby"
+  %li= link_to "Python",:action=>"python"
+  %li= link_to "Drupal","http://drupal.org/project/timecert"
+  
