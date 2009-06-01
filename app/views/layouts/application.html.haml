@@ -13,6 +13,10 @@
     #container
       #header
         %ul.top_bar
+          - unless current_page?("/developers")
+            %li.first
+              %a{:href=>"/developers"}
+                Developers
           - unless current_page?("/generate")
             %li
               %a{:href=>"/generate"}
