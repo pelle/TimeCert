@@ -1,3 +1,4 @@
+require 'json'
 class GithubController < ApplicationController
   caches_page :show
   
