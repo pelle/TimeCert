@@ -3,10 +3,20 @@
 
   "GitHub":http://github.com is a great site for managing both public and private code repositories. It is built on top of Git a distributed version control system, which uses SHA1 digests as part of it's fundamental architecture, just like TimeCert.
   
-  GitHub provides timestamps, but they are the same timestamps provided by the committer so they are not certified like TimeCert. Luckily it's pretty easy to integrate GitHub with TimeCert using Post Receive Hooks.
+  GitHub provides timestamps, but they are the same timestamps provided by the committer so they are not certified like TimeCert. Luckily it's pretty easy to integrate GitHub with TimeCert using Post Receive Hooks. Even better, this also works for your private repositories. As GitHub provides us with the digests we never have to see your code.
   
   When GitHub receives a series of commits from a user it can call an external webservice with details for this. All you have to do is to add this pages url <code>http://timecert.org/github</code> into the Service Hooks page of your GitHub projects Admin page.
 
 %a{:href=>"http://github.com/guides/post-receive-hooks"}
   =image_tag 'http://img.skitch.com/20090814-ksn6tk94h8is3ddgsxmsmuxk4s.jpg',:width=>"75%"
+  
+:textile
+  h2. Why would I want this?
+  
+  There are all sorts of reasons why this could be useful. The most important reason for individual software developers is to protect your own Intellectual Property. None of this should be considered Legal advice, please talk to a lawyer if you're really worried.
+  
+  Lets imagine you were working on your own side project or an open source project. Now you get hired by a company and you decide to use some of your own code to save time on your work within the company. If you use your own code again in the future you could be in big trouble, unless you can prove that you wrote this code before.
+  
+  GitHub and TimeCert together should provide all the proof you need. GitHub shows the details of the code you committed and TimeCert shows an impartial timestamp of that commit.
+  
   

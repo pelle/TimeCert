@@ -17,6 +17,9 @@
             %li.first
               %a{:href=>"/developers"}
                 Developers
+          - unless current_page?("/github")
+            %li
+              %a{:href=>"/github"} TimeCert your GitHub Projects          
           - unless current_page?("/generate")
             %li
               %a{:href=>"/generate"}
