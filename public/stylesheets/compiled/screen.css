@@ -175,33 +175,52 @@ body .bottom { margin-bottom: 0; padding-bottom: 0; }
 /* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/links/_hover_link.sass */
 #header a:hover, #footer a:hover { text-decoration: underline; }
 
-/* line 64, ../../../app/stylesheets/screen.sass */
-textarea { font-family: monaco,"bitstream vera sans mono", "lucida console", "courier new", courier, serif; padding: 2px; }
+/* line 62, ../../../app/stylesheets/screen.sass */
+textarea { font-family: Monaco, Consolas, Liberation Mono, Bitstream Vera Mono, monospace; padding: 2px; }
 
-/* line 68, ../../../app/stylesheets/screen.sass */
+/* line 66, ../../../app/stylesheets/screen.sass */
 textarea.select-code { font-size: 65%; margin: 0.5em 0; }
 
-/* line 72, ../../../app/stylesheets/screen.sass */
-.digest, pre, code, tt { font-family: monaco,"bitstream vera sans mono", "lucida console", "courier new", courier, serif; }
+/* line 70, ../../../app/stylesheets/screen.sass */
+.digest, pre, code, tt { font-family: Monaco, Consolas, Liberation Mono, Bitstream Vera Mono, monospace; }
 
-/* line 75, ../../../app/stylesheets/screen.sass */
+/* line 73, ../../../app/stylesheets/screen.sass */
 .stamp { background-color: #A00; color: #FFF; -moz-border-radius: 1em; -webkit-border-radius: 1em; padding: 1em; font-size: 150%; margin: 1em 0; text-align: center; }
-/* line 85, ../../../app/stylesheets/screen.sass */
-.stamp .digest { color: yellow; background-color: #600; font-family: Monaco,Consolas,Liberation Mono,Bitstream Vera Mono,monospace; -moz-border-radius: 1em; -webkit-border-radius: 1em; padding: 1em; }
-/* line 93, ../../../app/stylesheets/screen.sass */
+/* line 83, ../../../app/stylesheets/screen.sass */
+.stamp .digest { font-family: Monaco, Consolas, Liberation Mono, Bitstream Vera Mono, monospace; color: yellow; background-color: #600; -moz-border-radius: 1em; -webkit-border-radius: 1em; padding: 1em; }
+/* line 91, ../../../app/stylesheets/screen.sass */
 .stamp .timestamp { font-size: 150%; }
-/* line 95, ../../../app/stylesheets/screen.sass */
+/* line 93, ../../../app/stylesheets/screen.sass */
 .stamp p { margin: 0.2em 0; font-size: 80%; color: #CCC; }
 
-/* line 100, ../../../app/stylesheets/screen.sass */
+/* line 98, ../../../app/stylesheets/screen.sass */
 ul.samples { font-size: 90%; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa; margin: 1em 0; padding: 1em 1em; }
 /* line 8, ../../../../../../../Library/Ruby/Gems/1.8/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.sass */
 ul.samples li { list-style-type: none; margin-left: 0px; }
-/* line 107, ../../../app/stylesheets/screen.sass */
+/* line 105, ../../../app/stylesheets/screen.sass */
 ul.samples li { margin: 0.5em 0; }
 
-/* line 110, ../../../app/stylesheets/screen.sass */
+/* line 108, ../../../app/stylesheets/screen.sass */
 .links { border-top: 1px solid #aaa; padding-top: 1em; }
 
-/* line 114, ../../../app/stylesheets/screen.sass */
+/* line 112, ../../../app/stylesheets/screen.sass */
 .gist { font-size: 80%; }
+
+/* line 115, ../../../app/stylesheets/screen.sass */
+.commit { border: 1px solid #ccc; padding: 5px 10px; font-size: 90%; }
+/* line 120, ../../../app/stylesheets/screen.sass */
+.commit .message { font-family: Monaco, Consolas, Liberation Mono, Bitstream Vera Mono, monospace; margin: 0 0 5px 0; border-bottom: 1px solid #ccc; padding: 0 0 5px 0; }
+/* line 126, ../../../app/stylesheets/screen.sass */
+.commit a { text-decoration: none; color: #666; }
+/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/links/_hover_link.sass */
+.commit a:hover { text-decoration: underline; }
+/* line 130, ../../../app/stylesheets/screen.sass */
+.commit .gravatar { border: 1px solid #ccc; padding: 5px; float: left; margin: 0 5px 0 0; }
+/* line 136, ../../../app/stylesheets/screen.sass */
+.commit .trees { display: block; float: right; border-left: 1px solid #ccc; padding-left: 1em; }
+/* line 142, ../../../app/stylesheets/screen.sass */
+.commit .trees a { color: #666; font-family: Monaco, Consolas, Liberation Mono, Bitstream Vera Mono, monospace; text-decoration: none; }
+/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/links/_hover_link.sass */
+.commit .trees a:hover { text-decoration: underline; }
+/* line 147, ../../../app/stylesheets/screen.sass */
+.commit iframe { clear: all; margin-top: 5px; }

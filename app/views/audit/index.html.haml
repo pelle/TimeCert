@@ -1,0 +1,31 @@
+:textile
+  h1. Code Audit
+
+  To ensure trust in TimeCert the code is freely available on "GitHub":http://github.com/TimeCert/tree/. We are experimenting here with code audits, so you can alway see exactly what code is deployed at any given moment.
+  
+  h2. Current code
+  
+%p 
+  These are the details of what is currently deployed
+  =link_to "(view source of this page)","#{@auditor.tree_url}/app/views/audit/index.html.haml"
+  \:
+  
+.commit
+  .message
+    = link_to @auditor.message, @auditor.commit_url
+  .trees
+    commit:
+    = link_to @auditor.digest,@auditor.commit_url, :title=>"The content of the last change made"
+    %br
+    tree:
+    = link_to @auditor.tree_digest,@auditor.tree_url, :title=>"The full source code that is deployed right now"
+    %br
+    parent:
+    =link_to @auditor.parent.sha,@auditor.parent_url, :title=>"The previous commit"
+    
+  .who
+    .gravatar
+      =link_to_committer gravatar( @auditor.email,60), @auditor.email
+    = link_to_committer @auditor.name, @auditor.email
+    
+  %iframe{:src=>"/#{@auditor.digest}.iframe",:width=>"450px",:height=>"30px"}

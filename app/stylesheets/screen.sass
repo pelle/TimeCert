@@ -58,8 +58,6 @@ body
   a
     +hover-link
     
-=source-code
-  font-family: monaco,"bitstream vera sans mono", "lucida console", "courier new", courier, serif
   
 textarea
   +source-code
@@ -83,9 +81,9 @@ textarea.select-code
   text-align: center
   
   .digest 
+    +source-code
     color: yellow
     background-color: #600
-    font-family: Monaco,Consolas,Liberation Mono,Bitstream Vera Mono,monospace
     -moz-border-radius: 1em
     -webkit-border-radius: 1em
     padding: 1em
@@ -113,3 +111,39 @@ ul.samples
 
 .gist
   font-size: 80%
+  
+.commit
+  border: 1px solid #ccc
+  padding: 5px 10px
+  font-size: 90%
+  
+  .message
+    +source-code
+    margin: 0 0 5px 0
+    border-bottom: 1px solid #ccc
+    padding: 0 0 5px 0
+
+  a
+    +hover-link
+    color: #666
+      
+  .gravatar
+    border: 1px solid #ccc
+    padding: 5px
+    float: left
+    margin: 0 5px 0 0
+  
+  .trees
+    display: block
+    float: right
+    border-left: 1px solid #ccc
+    padding-left: 1em
+    
+    a
+      color: #666
+      +source-code
+      +hover-link
+      
+  iframe
+    clear: all
+    margin-top: 5px
