@@ -1,6 +1,6 @@
 require 'json'
 class GithubController < ApplicationController
-  caches_page :show
+  caches_action :show
   
   # extracts all digest from payload and timestamps them
   def create
