@@ -1,5 +1,5 @@
 class AuditController < ApplicationController
-  caches_action :index
+  caches_page :index
   
   def index
     @auditor=Auditor.new
