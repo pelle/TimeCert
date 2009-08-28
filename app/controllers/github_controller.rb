@@ -7,13 +7,13 @@ class GithubController < ApplicationController
     head :ok # Return straight away
     begin
       payload=JSON.parse(params[:payload])
-      Stams.by_digest payload["before"]
-      Stams.by_digest payload["after"]
+      Stamp.by_digest payload["before"]
+      Stamp.by_digest payload["after"]
       payload["commits"].each do |c| 
-        Stams.by_digest( c["id"])
+        Stamp.by_digest( c["id"])
       end
     rescue
-      logger.error "Error parsing payload from github"
+      logger.error "Error parsing payload from github: #{$!}"
     end
   end
 
