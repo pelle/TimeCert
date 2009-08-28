@@ -1,0 +1,12 @@
+:textile
+  h1. Timestamping your GitHub commits
+
+  "GitHub":http://github.com is a great site for managing both public and private code repositories. It is built on top of Git a distributed version control system, which uses SHA1 digests as part of it's fundamental architecture, just like TimeCert.
+  
+  GitHub provides timestamps, but they are the same timestamps provided by the committer so they are not certified like TimeCert. Luckily it's pretty easy to integrate GitHub with TimeCert using Post Receive Hooks.
+  
+  When GitHub receives a series of commits from a user it can call an external webservice with details for this. All you have to do is to add this pages url <code>http://timecert.org/github</code> into the Service Hooks page of your GitHub projects Admin page.
+
+%a{:href=>"http://github.com/guides/post-receive-hooks"}
+  =image_tag 'http://img.skitch.com/20090814-ksn6tk94h8is3ddgsxmsmuxk4s.jpg',:width=>"75%"
+  
