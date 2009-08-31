@@ -1,5 +1,8 @@
-require 'git'
 class Auditor
+  # I'm requiring it here, so the git gem is only loaded when this model is instantiated.
+  # This is due to some issues I had with multiple passenger instances attempting load the gem
+  # at the same time. The checks the git version  which apparently causes issues.
+  require 'git' 
   attr_accessor :git
   
   def initialize

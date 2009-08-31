@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml', :lib => 'haml'
   config.gem 'json'
   config.gem 'chriseppstein-compass', :version => '>= 0.8.12', :lib => 'compass', :source => "http://gems.github.com"
-  config.gem 'git'
+#  config.gem 'git'
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
