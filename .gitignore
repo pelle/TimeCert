@@ -10,3 +10,4 @@ db/development_structure.sql
 config/database.yml
 db/*.sqlite3
 app/stylesheets/.sass-cache
+.rvmrc
