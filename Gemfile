@@ -8,7 +8,7 @@ gem 'rails', '3.0.3'
 gem 'haml'
 gem 'json'
 gem 'compass'
-gem 'git'
+gem 'git', :require=>false
 gem 'exceptional'
 gem 'configuration', "1.1.0"
 
