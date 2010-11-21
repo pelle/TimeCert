@@ -2,10 +2,13 @@
 # from the project root directory.
 ENV["RAILS_ENV"] ||= 'test'
 require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_ROOT)
-require 'spec/autorun'
-require 'spec/rails'
+require 'rspec/rails'
 
-Spec::Runner.configure do |config|
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
+Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+RSpec.configure do |config|
   # If you're not using ActiveRecord you should remove these
   # lines, delete config/database.yml and disable :active_record
   # in your config/boot.rb
