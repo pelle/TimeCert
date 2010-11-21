@@ -36,10 +36,12 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    exceptional (2.0.27)
     fuubar (0.0.2)
       rspec (~> 2.0)
       rspec-instafail (~> 0.1.4)
       ruby-progressbar (~> 0.0.9)
+    git (1.2.5)
     growl (1.0.3)
     guard (0.2.2)
       open_gem (~> 1.4.2)
@@ -58,6 +60,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mysql2 (0.2.6)
     open_gem (1.4.2)
       launchy (~> 0.3.5)
     polyglot (0.3.1)
@@ -103,12 +106,15 @@ PLATFORMS
 
 DEPENDENCIES
   compass
+  exceptional
   fuubar
+  git
   growl
   guard
   guard-rspec
   haml
   json
+  mysql2
   rails (= 3.0.3)
   rb-fsevent
   rspec-rails
