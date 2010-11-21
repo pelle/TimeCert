@@ -2,6 +2,8 @@ require 'json'
 class GithubController < ApplicationController
   caches_action :show
   
+  def show
+  end
   # extracts all digest from payload and timestamps them
   def create
     head :ok # Return straight away

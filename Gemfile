@@ -11,6 +11,7 @@ gem 'compass'
 gem 'git', :require=>false
 gem 'exceptional'
 gem 'configuration', "1.1.0"
+gem 'RedCloth'
 
 group :test do
   gem "rspec-rails"
