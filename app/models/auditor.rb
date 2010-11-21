@@ -6,7 +6,7 @@ class Auditor
   attr_accessor :git
   
   def initialize
-    @git=Git.open(RAILS_ROOT)
+    @git=Git.open(Rails.root)
   end
   
   def url

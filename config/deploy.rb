@@ -61,22 +61,22 @@ namespace :rake do
     end
   end
   task :db_create do
-    run("cd #{deploy_to}/current; /usr/bin/rake db:create RAILS_ENV=production")
+    run("cd #{deploy_to}/current; /usr/bin/rake db:create Rails.env=production")
   end
   task :db_schema_load do
-    run("cd #{deploy_to}/current; /usr/bin/rake db:schema:load RAILS_ENV=production")
+    run("cd #{deploy_to}/current; /usr/bin/rake db:schema:load Rails.env=production")
   end
   task :db_restore_database do
-    run("cd #{deploy_to}/current; /usr/bin/rake db:s3:restore RAILS_ENV=production")
+    run("cd #{deploy_to}/current; /usr/bin/rake db:s3:restore Rails.env=production")
   end
   task :db_migrate do
-    run("cd #{deploy_to}/current; /usr/bin/rake db:migrate RAILS_ENV=production")
+    run("cd #{deploy_to}/current; /usr/bin/rake db:migrate Rails.env=production")
   end
 end
 
 namespace :memcache do
   desc "Clear Memcached"
   task :clear do
-    run "cd #{deploy_to}/current; RAILS_ENV=production script/runner 'Rails.cache.clear'"      
+    run "cd #{deploy_to}/current; Rails.env=production script/runner 'Rails.cache.clear'"      
   end
 end

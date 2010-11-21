@@ -10,6 +10,7 @@ gem 'json'
 gem 'compass'
 gem 'git'
 gem 'exceptional'
+gem 'configuration', "1.1.0"
 
 group :test do
   gem "rspec-rails"
