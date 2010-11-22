@@ -27,7 +27,7 @@ role :web, "timecert.org"
 role :db,  "timecert.org", :primary => true
 
 after   'deploy:restart', 'deploy:cleanup'
-after   'deploy:update_code', 'db:symlink'
+after   'deploy:update_code', 'deploy:symlink'
 
 #############################################################
 #	Passenger
@@ -38,14 +38,11 @@ namespace :deploy do
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
   end
-
-end
-
-namespace :db do
-  desc "Make symlink for database yaml" 
+  
+  desc "symlink"
   task :symlink do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml" 
     run "ln -nfs #{shared_path}/config/exceptional.yml #{release_path}/config/exceptional.yml" 
+    run "mkdir -p #{shared_path}/cache"
+    run "ln -s #{shared_path}/cache #{release_path}/tmp/cache" 
   end
 end
-

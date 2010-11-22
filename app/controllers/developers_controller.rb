@@ -7,4 +7,6 @@ class DevelopersController < ApplicationController
   def ruby
   end
 
+  def python
+  end
 end
