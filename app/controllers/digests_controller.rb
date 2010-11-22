@@ -1,6 +1,6 @@
 require 'digest/sha1'
 class DigestsController < ApplicationController
-  caches_page :show
+#  caches_page :show
   def new
   end
 
@@ -10,6 +10,11 @@ class DigestsController < ApplicationController
 
   def show
     @stamp=Stamp.by_digest params[:digest]
+    if request.env["HTTP_REFERER"]
+      uri = URI.parse(request.env["HTTP_REFERER"])
+      $redis.incr("site:#{uri.host}") if uri.host
+    end
+    
     respond_to do |format|
       format.html
       format.iframe

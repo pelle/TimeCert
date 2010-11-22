@@ -13,6 +13,7 @@ gem 'exceptional'
 gem 'configuration', "1.1.0"
 gem 'RedCloth'
 gem 'redis'
+gem 'system_timer'
 
 group :test do
   gem "rspec-rails"

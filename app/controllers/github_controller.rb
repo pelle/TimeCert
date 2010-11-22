@@ -14,6 +14,7 @@ class GithubController < ApplicationController
       payload["commits"].each do |c| 
         Stamp.by_digest( c["id"])
       end
+      $redis.incr("git:#{payload["repository"]["url"]}") if payload["repository"] && payload["repository"]["url"]
     rescue
       logger.error "Error parsing payload from github: #{$!}"
     end

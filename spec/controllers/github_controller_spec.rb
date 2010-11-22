@@ -22,7 +22,8 @@ describe GithubController do
               :id        => "aaf4c61ddcc5e8a2dabede0f3b482cd9aea94343"
             },{
               :id        => "aaf4c61ddcc5e8a2dabede0f3b482cd9aea94344"
-            }]
+            }],
+        :repository =>{ :url => "http://github.com/pelle/timecert"}
         }.to_json
     end
     
@@ -44,6 +45,10 @@ describe GithubController do
     
     it "should have timestamps for last commit sha" do
       $redis.get("sha1:aaf4c61ddcc5e8a2dabede0f3b482cd9aea94344").should_not be_nil
+    end
+    
+    it "should record site" do
+      $redis.get("git:http://github.com/pelle/timecert").should == "1"
     end
   end
 end
