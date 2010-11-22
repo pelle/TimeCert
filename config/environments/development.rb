@@ -5,7 +5,6 @@ Timecert::Application.configure do
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
-
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 
@@ -22,5 +21,8 @@ Timecert::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  $redis = Redis.new(:db => 11)
+  
 end
 

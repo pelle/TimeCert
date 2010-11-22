@@ -1,17 +1,40 @@
-class Stamp < ActiveRecord::Base
-  set_primary_key :digest
-  attr_accessible :digest
-  attr_readonly :digest,:created_at
-  validates_format_of :digest,:with=>/^[0123456789abcdef]{40}$/,:on=>:create
+class Stamp 
+  attr_reader :seconds, :digest
+  
+  def initialize(digest)
+    @digest = digest.strip
+    @seconds = get
+    unless @seconds
+      @seconds = Time.now.to_i
+      $redis.set(redis_key,@seconds)
+    end
+    
+  end
+  
+  def self.find_by_digest(digest)
+    Stamp.new(digest) if $redis.get("sha1:#{digest.strip}")      
+  end
   
   def self.by_digest(digest)
-    Stamp.find_or_create_by_digest digest
+    Stamp.new digest
+  end
+  
+  def redis_key
+    "sha1:#{@digest}"
   end
   
   def timestamp
-    self.created_at
+    @timestamp ||= Time.at(seconds.to_i)
   end
   
+  def ==(stamp)
+    stamp.is_a?(Stamp) && digest == stamp.digest
+  end
+  
+  def get
+    $redis.get(redis_key)
+  end
+    
   def utc
     self.timestamp.utc
   end

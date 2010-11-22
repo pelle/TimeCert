@@ -20,7 +20,7 @@ describe DigestsController do
     end
     
     it "should not yet have digest" do 
-      Stamp.find_by_digest(Digest::SHA1.hexdigest("hello")).should be_nil
+      $redis.get("sha1:aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d").should be_nil 
     end
   end
 
@@ -34,7 +34,7 @@ describe DigestsController do
     end
     
     it "should have digest" do
-      Stamp.find_by_digest("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3").should_not be_nil
+      $redis.get("sha1:a94a8fe5ccb19ba61c4c0873d391e987982fbbd3").should_not be_nil
     end
     
   end

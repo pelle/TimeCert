@@ -85,6 +85,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rb-fsevent (0.3.9)
+    redis (2.1.1)
     rspec (2.1.0)
       rspec-core (~> 2.1.0)
       rspec-expectations (~> 2.1.0)
@@ -120,4 +121,5 @@ DEPENDENCIES
   mysql2
   rails (= 3.0.3)
   rb-fsevent
+  redis
   rspec-rails
