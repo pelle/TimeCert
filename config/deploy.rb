@@ -43,6 +43,6 @@ namespace :deploy do
   task :symlink do
     run "ln -nfs #{shared_path}/config/exceptional.yml #{release_path}/config/exceptional.yml" 
     run "mkdir -p #{shared_path}/cache"
-    run "ln -s #{shared_path}/cache #{release_path}/tmp/cache" 
+    run "ln -sf #{shared_path}/cache #{release_path}/tmp/cache" 
   end
 end
