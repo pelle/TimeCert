@@ -1,6 +1,8 @@
 require 'digest/sha1'
 class DigestsController < ApplicationController
-#  caches_page :show
+  before_filter :store_referrer, :only=>:show
+  caches_page :new
+  caches_action :show
   def new
   end
 
@@ -10,10 +12,6 @@ class DigestsController < ApplicationController
 
   def show
     @stamp=Stamp.by_digest params[:digest]
-    if request.env["HTTP_REFERER"]
-      uri = URI.parse(request.env["HTTP_REFERER"])
-      $redis.incr("site:#{uri.host}") if uri.host
-    end
     
     respond_to do |format|
       format.html
@@ -26,5 +24,14 @@ class DigestsController < ApplicationController
       end
     end
   end
+  
+  private
+  
+    def store_referrer
+      if request.env["HTTP_REFERER"]
+        uri = URI.parse(request.env["HTTP_REFERER"])
+        $redis.incr("site:#{uri.host}") if uri.host
+      end
+    end
 
 end
