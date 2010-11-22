@@ -1,32 +1,30 @@
 @import partials/base.sass
-@import compass/reset.sass
-@import blueprint/modules/colors.sass
-@import blueprint/modules/grid.sass
-@import blueprint/modules/typography.sass
-@import blueprint/modules/utilities.sass
-@import compass/utilities.sass
+@import "compass/reset"
+@import "blueprint/colors"
+@import "blueprint/grid"
+@import "blueprint/typography"
+@import "blueprint/utilities"
+@import "compass/utilities"
 
 body
   +blueprint-typography
   +blueprint-utilities
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
-  background-color= !dark_background_color
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+  background-color: $dark_background_color
   font-size: 100%
   line-height: 1.5em
-  
+
 #container
-  background-color= !background_color
+  background-color: $background_color
   padding: 1em
   margin: 1em auto 1em auto
   width: 700px
   -moz-border-radius: 1em
-  -webkit-border-radius: 1em	
-  
-  
+  -webkit-border-radius: 1em
+
 #header
   margin-bottom: 1em
   position: relative
-
   ul.top_bar
     +horizontal-list
     margin-top: 1em
@@ -34,22 +32,19 @@ body
     top: 1em
     right: 0px
     li
-      border-left: 1px solid #aaa
+      border-left: 1px solid #aaaaaa
     li.first
       border-left: none
-  
-    
-#content
-  
+
 #footer
-  border-top: 1px solid #aaa
+  border-top: 1px solid #aaaaaa
   padding-top: 2em
   margin-top: 2em
-  font-size: %80
+  font-size: 80%
   ul
     +horizontal-list
     li
-      border-left: 1px solid #aaa
+      border-left: 1px solid #aaaaaa
       padding: 0 1em
     li.first
       border-left: none
@@ -57,93 +52,84 @@ body
 #header,#footer
   a
     +hover-link
-    
-  
+
 textarea
   +source-code
   padding: 2px
-  
+
 textarea.select-code
   font-size: 65%
   margin: 0.5em 0
 
 .digest,pre,code,tt
   +source-code
-  
+
 .stamp
-  background-color: #A00
-  color: #FFF
+  background-color: #aa0000
+  color: white
   -moz-border-radius: 1em
-  -webkit-border-radius: 1em	
+  -webkit-border-radius: 1em
   padding: 1em
   font-size: 150%
   margin: 1em 0
   text-align: center
-  
-  .digest 
+  .digest
     +source-code
     color: yellow
-    background-color: #600
+    background-color: #660000
     -moz-border-radius: 1em
     -webkit-border-radius: 1em
     padding: 1em
-    
   .timestamp
     font-size: 150%
-  p 
+  p
     margin: 0.2em 0
     font-size: 80%
-    color: #CCC
-    
+    color: #cccccc
+
 ul.samples
   +no-bullets
   font-size: 90%
-  border-top: 1px solid #aaa
-  border-bottom: 1px solid #aaa
+  border-top: 1px solid #aaaaaa
+  border-bottom: 1px solid #aaaaaa
   margin: 1em 0
   padding: 1em 1em
   li
     margin: 0.5em 0
 
 .links
-  border-top: 1px solid #aaa
+  border-top: 1px solid #aaaaaa
   padding-top: 1em
 
 .gist
   font-size: 80%
-  
+
 .commit
-  border: 1px solid #ccc
+  border: 1px solid #cccccc
   padding: 5px 10px
   font-size: 90%
-  
   .message
     +source-code
     margin: 0 0 5px 0
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid #cccccc
     padding: 0 0 5px 0
-
   a
     +hover-link
-    color: #666
-      
+    color: #666666
   .gravatar
-    border: 1px solid #ccc
+    border: 1px solid #cccccc
     padding: 5px
     float: left
     margin: 0 5px 0 0
-  
   .trees
     display: block
     float: right
-    border-left: 1px solid #ccc
+    border-left: 1px solid #cccccc
     padding-left: 1em
-    
     a
-      color: #666
+      color: #666666
       +source-code
       +hover-link
-      
   iframe
     clear: all
     margin-top: 5px

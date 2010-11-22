@@ -12,3 +12,4 @@ db/*.sqlite3
 app/stylesheets/.sass-cache
 .rvmrc
 .bundle
+public/stylesheets/compiled
