@@ -11,9 +11,8 @@
         a {font-weight:bold;color:blue;}
         #logo {position: absolute;top:-1px;right:0;}  
   %body
-    %img#logo{:src=>"/images/logo25.png",:alt=>"TimeCert",:width=>"25",:height=>"25"}
+    %img#logo{:src=>SMALL_LOGO,:alt=>"TimeCert",:width=>"25",:height=>"25"}
     %span#digest=@stamp.digest
     %span#timestamp=@stamp.utc
     %br
     %a{:href=>"/#{@stamp.digest}",:target=>"_top"} Certified by TimeCert.org
-    =render :partial=>"shared/ga"

@@ -39,10 +39,10 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
   
-  desc "symlink"
-  task :symlink do
+  desc "symlink_shared"
+  task :symlink_shared do
     run "ln -nfs #{shared_path}/config/exceptional.yml #{release_path}/config/exceptional.yml" 
     run "mkdir -p #{shared_path}/cache"
-    run "ln -sf #{shared_path}/cache #{release_path}/tmp/cache" 
+    run "ln -sf #{shared_path}/cache #{release_path}/tmp" 
   end
 end
