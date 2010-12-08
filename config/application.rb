@@ -33,7 +33,7 @@ module Timecert
     config.middleware.use Rack::Deflater
     
     [ Rack::Lock, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash].each do |m|
-#      config.middleware.delete(m)
+      config.middleware.delete(m)
     end
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
